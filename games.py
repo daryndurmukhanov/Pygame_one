@@ -31,7 +31,7 @@ lastMove = "right"
 class snaryad():
     def __init__(self, x, y, radius, color, facing):
         self.x = x
-        self.y = r
+        self.y = y
         self.radius = radius
         self.color = color
         self.facing = facing
@@ -79,8 +79,8 @@ while not done:
                 facing = 1
             else:
                 facing = -1
-            #if len(bullets) < 5:
-            bullets.append(snaryad(round(x + width // 2), round(y + height // 2), 5, (255, 0, 0), facing ))
+            if len(bullets) < 5:
+               bullets.append(snaryad(round(x + width // 2), round(y + height // 2), 5, (255, 0, 0), facing ))
 
         if pressed[pygame.K_LEFT] and x > 5: 
             x -= speed
@@ -110,6 +110,6 @@ while not done:
 
                 else:
                    is_jump = False
-                   jumpCound = 10        
+                   jumpCound = 10       
         drawWindow()
         
